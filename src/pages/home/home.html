@@ -35,10 +35,10 @@
                     <h3>{{drink.name}}</h3>
                 </ion-card-header>
                 <ion-card-content>
-                  {{drink.image}}
-                  <img [src]= "'assets/drinks-img/' + drink.image">
+                  <!-- <p>{{drink['how to mix']}}</p> -->
+                  <!-- {{drink.image}} -->
+                  <img [src]= "'assets/drinks-img/' + drink.image" (click)="openModal({title: drink.name, detail: drink['how to mix']})">
                 </ion-card-content>
-
 
                     <!-- <ion-row>
                       <ion-col>

@@ -16,17 +16,26 @@ import {Drink} from '../../models/drink';
 })
 export class DetailsPage {
   drink: Drink;
+  title: string;
+  detail: string;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private view: ViewController) {
+              private view: ViewController
+            ) {
+
+    //constructor
+    this.title = navParams.data.title;
+    this.detail = navParams.data.detail;
+    console.log(navParams);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
-    this.drink = this.navParams.get('drink');
-    console.log(drink.name);
+    // this.drink = this.navParams.get('drink');
+    // console.log(drink.name);
   }
   closeModal(){
-    this.view.dismiss();
+    let data = {test: 'hello'};
+    this.view.dismiss(data);
   }
 }
