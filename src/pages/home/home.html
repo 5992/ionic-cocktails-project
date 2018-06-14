@@ -27,30 +27,31 @@
       </ion-item>
   </ion-list>
   <ion-grid>
-  <ion-row>
+    <ion-row>
       <ion-col col-md-6 col-sm-6 col-12 *ngFor="let drink of drinks; let i=index">
         <!-- [ngStyle]="{'background': note.color }" -->
-        <ion-card >
-          <ion-card-header>
-              <h3>{{drink.name}}</h3>
-          </ion-card-header>
-          <ion-card-content>
-            {{drink.image}}
-          </ion-card-content>
+        <ion-card>
+                <ion-card-header>
+                    <h3>{{drink.name}}</h3>
+                </ion-card-header>
+                <ion-card-content>
+                  {{drink.image}}
+                  <img [src]= "'assets/drinks-img/' + drink.image">
+                </ion-card-content>
 
-          <!-- <ion-row>
-            <ion-col>
-              <button ion-button small clear block color="light" (click)="openCreateModal({mode:'edit',title:note.title,text:note.note,created:note.created})">
-                <ion-icon name="create"></ion-icon>
-              </button>
-            </ion-col>
-            <ion-col>
-              <button ion-button small clear block color="light" (click)="delete(note.created)">
-                <ion-icon name="close"></ion-icon>
-              </button>
-            </ion-col>
-          </ion-row> -->
 
+                    <!-- <ion-row>
+                      <ion-col>
+                        <button ion-button small clear block color="light" (click)="openCreateModal({mode:'edit',title:note.title,text:note.note,created:note.created})">
+                          <ion-icon name="create"></ion-icon>
+                        </button>
+                      </ion-col>
+                      <ion-col>
+                        <button ion-button small clear block color="light" (click)="delete(note.created)">
+                          <ion-icon name="close"></ion-icon>
+                        </button>
+                      </ion-col>
+                    </ion-row> -->
       </ion-card>
       </ion-col>
     </ion-row>

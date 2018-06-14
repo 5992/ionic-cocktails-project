@@ -20,4 +20,28 @@
   <div *ngIf="selectedItem" padding>
     You navigated here from <b>{{selectedItem.title}}</b>
   </div>
+  <!-- <div *ngFor="let drink of drinks; let i=index">
+
+  <ion-item>
+    <ion-thumbnail item-start>
+      <!-- <img [src]= "'assets/drinks-img/' + drink.image"> -->
+    <!-- </ion-thumbnail>
+    <h2>My Neighbor Totoro</h2>
+    <p>Hayao Miyazaki • 1988</p>
+    <button ion-button clear item-end>View</button>
+  </ion-item>
+</div> -->
+  <ion-list *ngFor="let drink of drinks; let i=index">
+    <!-- <ion-col col-md-6 col-sm-6 col-12 *ngFor="let drink of drinks; let i=index"> -->
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img [src]= "'assets/drinks-img/' + drink.image">
+        </ion-thumbnail>
+        <h2>My Neighbor Totoro</h2>
+        <p>Hayao Miyazaki • 1988</p>
+        <button ion-button clear item-end>View</button>
+      </ion-item>
+    <!-- </ion-col> -->
+  </ion-list>
+
 </ion-content>

@@ -10,18 +10,16 @@ import {Drink} from '../../models/drink';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  drinks: Array <Drink> = [];
+  constructor(public navCtrl: NavController,
+    private firebase: FirebaseProvider) {
 
-    public name: string;
-    drinks: Array <Drink> = [];
-    constructor(public navCtrl: NavController,
-      private firebase: FirebaseProvider) {
+      this.firebase.getDrinks((drinks) => {
+        if(drinks){
+          this.renderDrinks(drinks);
+        }
 
-        this.firebase.getDrinks((drinks) => {
-          if(drinks){
-            this.renderDrinks(drinks);
-          }
-
-        });
+      });
 
 
       // this._firebase.drink1.on('value', data =>{
